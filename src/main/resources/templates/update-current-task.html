@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <form th:action="@{/updateTask(id=${task.id})}" th:object="${task}" method="post">
+                <h2>Изменение цели</h2>
+                <br>
+                <label>Цель:</label>
+                <input type="text" th:name="name" th:value="*{name}">
+                <br><br>
+                <label>Описание:</label>
+                <input type="text" th:name="target" th:value="*{task}">
+                <br><br><br>
+                <button class="button" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </body>
+</html>

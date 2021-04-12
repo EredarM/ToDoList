@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Task Library</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <h1>Не ленись - дествуй!</h1>
+            <div id="book-list">
+                <div th:each="task: ${tasks}">
+                    <a th:href="@{/getTaskInfo(id=${task.id})}" class="task-link" th:attr="data-id=${task.id}" th:text="${task.name}"></a>
+                    <a th:href="@{/updateTaskPage(id=${task.id})}">Изменить</a>
+                    <a th:href="@{/deleteTask(id=${task.id})}">Удалить</a>
+                </div>
+            </div>
+            <a class="button" th:href="@{/addNewTaskPage}">Добавить цель</a>
+        </div>
+    </body>
+</html>

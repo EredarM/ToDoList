@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task info</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div th:object="${task}">
+            <p th:text="'ID - ' + *{id}"></p>
+            <p th:text="'Цель - ' + *{name}"></p>
+            <p th:text="'Описание - ' + *{task}"></p>
+            <a class="button" th:href="@{/}">Назад</a>
+        </div>
+    </div>
+</body>
+</html>
